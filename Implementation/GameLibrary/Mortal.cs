@@ -55,7 +55,7 @@ namespace GameLibrary {
         LevelUp();
       }
     }
-    public void LevelUp() {
+    public virtual void LevelUp() {
       // level increases
       Level++;
 
@@ -71,12 +71,17 @@ namespace GameLibrary {
       Luck += LVLINC_LUCK;
       Speed += LVLINC_SPEED;
     }
+    public void RefillHealthAndMana() {
+      Health = MaxHealth;
+      Mana = MaxMana;
+    }
     public void SimpleAttack(Mortal receiver) {
-      float baseDamage = Math.Abs(Str * 1.2f - receiver.Def);
-      float randMax = 1 + SIMPLEATTACK_RANDOM_AMT;
-      float randMin = 1 - SIMPLEATTACK_RANDOM_AMT;
-      float randMult = (float)(rand.NextDouble() * (randMax - randMin)) + randMin;
-      receiver.Health -= (baseDamage * randMult);
+      //float baseDamage = Math.Abs(Str * 1.2f - receiver.Def);
+      //float randMax = 1 + SIMPLEATTACK_RANDOM_AMT;
+      //float randMin = 1 - SIMPLEATTACK_RANDOM_AMT;
+      //float randMult = (float)(rand.NextDouble() * (randMax - randMin)) + randMin;
+      //receiver.Health -= (baseDamage * randMult);
+      receiver.Health -= 20;
     }
   }
 }
