@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace GameLibrary {
   public struct Position {
@@ -25,7 +26,6 @@ namespace GameLibrary {
     private Map map;
     public float XP { get; private set; }
     public bool ShouldLevelUp { get; private set; }
-    public string currentAtt {get; protected set; }
 
     /// <summary>
     /// 
@@ -89,6 +89,23 @@ namespace GameLibrary {
         Pic.Left = topleft.col;
         Pic.Top = topleft.row;
       }
+
+
+
+      switch (map.IsValidItem(newPos))
+            {
+                case 6:
+                    Str = Str + 50;
+                    break;
+
+                case 7:
+                    Def = Def + 50;
+                    break;
+
+                case 8:
+                    Health = Health + 50;
+                    break;
+            }
     }
   }
 }

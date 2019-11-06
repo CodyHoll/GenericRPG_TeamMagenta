@@ -71,17 +71,23 @@ namespace GameLibrary {
       Luck += LVLINC_LUCK;
       Speed += LVLINC_SPEED;
     }
+
+    public void GetItem(int item) { 
+      if (item == 6) {
+       Str += 50;      
+      }
+    }
+
     public void RefillHealthAndMana() {
       Health = MaxHealth;
       Mana = MaxMana;
     }
     public void SimpleAttack(Mortal receiver) {
-      //float baseDamage = Math.Abs(Str * 1.2f - receiver.Def);
-      //float randMax = 1 + SIMPLEATTACK_RANDOM_AMT;
-      //float randMin = 1 - SIMPLEATTACK_RANDOM_AMT;
-      //float randMult = (float)(rand.NextDouble() * (randMax - randMin)) + randMin;
-      //receiver.Health -= (baseDamage * randMult);
-      receiver.Health -= 20;
+      float baseDamage = Math.Abs(Str * 1.2f - receiver.Def);
+      float randMax = 1 + SIMPLEATTACK_RANDOM_AMT;
+      float randMin = 1 - SIMPLEATTACK_RANDOM_AMT;
+      float randMult = (float)(rand.NextDouble() * (randMax - randMin)) + randMin;
+      receiver.Health -= (baseDamage * randMult);
     }
   }
 }
