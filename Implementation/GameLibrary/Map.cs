@@ -28,24 +28,23 @@ namespace GameLibrary {
     /// <param name="grpMap"></param>
     /// <param name="LoadImg"></param>
     /// <returns></returns>
-    public Character LoadMap(string mapFile, GroupBox grpMap, Func<string, Bitmap> LoadImg) {
+    public Character LoadMap(List<string> mapFile, GroupBox grpMap, Func<string, Bitmap> LoadImg) {
       // declare and initialize locals
       int top = TOP_PAD;
       int left = BOUNDARY_PAD;
       Character character = null;
       Item item = null;
-      List<string> mapLines = new List<string>();
+      List<string> mapLines = mapFile;
 
       // read from map file
-      using (FileStream fs = new FileStream(mapFile, FileMode.Open)) {
-        using (StreamReader sr = new StreamReader(fs)) {
-          string line = sr.ReadLine();
+      /*using (StreamReader sr = new StreamReader(mapFile)) {
+        string line = sr.ReadLine();
           while (line != null) {
-            mapLines.Add(line);
-            line = sr.ReadLine();
-          }
+          mapLines.Add(line);
+          line = sr.ReadLine();
         }
-      }
+      }*/
+
 
       // load map file into layout and create PictureBox objects
       layout = new int[mapLines.Count, mapLines[0].Length];
@@ -151,8 +150,7 @@ namespace GameLibrary {
           };
           break;
 
-        // item
-        case 6:
+          case 6:
                     result = new PictureBox()
                     {
                         BackgroundImage = LoadImg("sword"),
@@ -182,7 +180,6 @@ namespace GameLibrary {
             Height = BLOCK_SIZE
           };
           break;
-
       }
       return result;
     }
