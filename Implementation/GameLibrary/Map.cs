@@ -12,6 +12,7 @@ namespace GameLibrary {
     private const int BLOCK_SIZE = 50;
     public double encounterChance;
     private Random rand;
+   
 
     public int CharacterStartRow { get; private set; }
     public int CharacterStartCol { get; private set; }
@@ -152,12 +153,13 @@ namespace GameLibrary {
 
         // item
         case 6:
-          result = new PictureBox()
-          {
-            BackgroundImage = LoadImg("sword"),
-            BackgroundImageLayout = ImageLayout.Stretch,
-            Width = BLOCK_SIZE,
-            Height = BLOCK_SIZE
+                    result = new PictureBox()
+                    {
+                        BackgroundImage = LoadImg("sword"),
+                        BackgroundImageLayout = ImageLayout.Stretch,
+                        Width = BLOCK_SIZE,
+                        Height = BLOCK_SIZE,
+                        Tag = "sword"
           };
           break;
 
@@ -207,7 +209,9 @@ namespace GameLibrary {
 
     public int IsValidItem(Position pos) { 
      if (layout[pos.row, pos.col] == 6) {
-       layout[pos.row, pos.col] = 0;
+
+       layout[pos.row, pos.col] = 0;  
+       
        //Item.RemoveItem();
        
        return 6;

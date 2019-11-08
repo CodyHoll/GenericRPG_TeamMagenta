@@ -50,5 +50,23 @@ namespace GenericRPG {
         }
       }
     }
+
+    public void RemoveItem(int num)
+        {
+            switch (num)
+            {
+                case 6:
+                    foreach (var control in grpMap.Controls)
+                    {
+                        var ctrl = control as Control;
+                        if ((ctrl.Tag as string) == "sword")
+                        {
+                            this.Controls.Remove(ctrl);
+                        }
+                    }
+                    break;
+            }
+            //return 0;
+        }
   }
 }

@@ -96,6 +96,7 @@ namespace GameLibrary {
             {
                 case 6:
                     Str = Str + 50;
+                    //FrmMap.RemoveItem(6);
                     break;
 
                 case 7:

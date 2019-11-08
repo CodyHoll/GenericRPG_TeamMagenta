@@ -32,9 +32,10 @@ namespace GameLibrary
 
         public void RemoveItem()
         {
-            //Bitmap yeet = new Bitmap("level2.png");
-            //this.Pic.Image = yeet;
-            //PictureBox.Image = Image.Resources("level2.png");
+            Bitmap yeet = new Bitmap("level2.png");
+            Pic.Image = yeet;
+            Pic.Left = pos.col;
+            Pic.Top = pos.row;
 
         }
 
