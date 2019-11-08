@@ -71,6 +71,13 @@ namespace GameLibrary {
       Luck += LVLINC_LUCK;
       Speed += LVLINC_SPEED;
     }
+
+    public void GetItem(int item) { 
+      if (item == 6) {
+       Str += 50;      
+      }
+    }
+
     public void RefillHealthAndMana() {
       Health = MaxHealth;
       Mana = MaxMana;
