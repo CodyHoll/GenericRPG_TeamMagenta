@@ -1,4 +1,4 @@
-﻿using GameLibrary;
+using GameLibrary;
 using GenericRPG.Properties;
 using System;
 using System.Drawing;
