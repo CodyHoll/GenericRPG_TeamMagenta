@@ -22,7 +22,7 @@ namespace GenericRPG.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace GenericRPG.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GenericRPG.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace GenericRPG.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap character {
+        public static System.Drawing.Bitmap character {
             get {
                 object obj = ResourceManager.GetObject("character", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap character_levelup {
+        public static System.Drawing.Bitmap character_levelup {
             get {
                 object obj = ResourceManager.GetObject("character_levelup", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap character_levelup_animation {
+        public static System.Drawing.Bitmap character_levelup_animation {
             get {
                 object obj = ResourceManager.GetObject("character_levelup_animation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream dead {
+        public static System.IO.UnmanagedMemoryStream dead {
             get {
                 return ResourceManager.GetStream("dead", resourceCulture);
             }
@@ -102,7 +102,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enemy {
+        public static System.Drawing.Bitmap enemy {
             get {
                 object obj = ResourceManager.GetObject("enemy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -112,7 +112,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fightboss {
+        public static System.Drawing.Bitmap fightboss {
             get {
                 object obj = ResourceManager.GetObject("fightboss", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -122,7 +122,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gameover {
+        public static System.Drawing.Bitmap gameover {
             get {
                 object obj = ResourceManager.GetObject("gameover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -132,7 +132,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap level2 {
+        public static System.Drawing.Bitmap level2 {
             get {
                 object obj = ResourceManager.GetObject("level2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -142,7 +142,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream levelup {
+        public static System.IO.UnmanagedMemoryStream levelup {
             get {
                 return ResourceManager.GetStream("levelup", resourceCulture);
             }
@@ -151,7 +151,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap quitgame {
+        public static System.Drawing.Bitmap quitgame {
             get {
                 object obj = ResourceManager.GetObject("quitgame", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -161,7 +161,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream step {
+        public static System.IO.UnmanagedMemoryStream step {
             get {
                 return ResourceManager.GetStream("step", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace GenericRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wall {
+        public static System.Drawing.Bitmap wall {
             get {
                 object obj = ResourceManager.GetObject("wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
