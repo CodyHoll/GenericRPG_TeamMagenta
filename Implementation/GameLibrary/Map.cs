@@ -12,9 +12,12 @@ namespace GameLibrary {
     private const int BLOCK_SIZE = 50;
     public double encounterChance;
     private Random rand;
+   
 
     public int CharacterStartRow { get; private set; }
     public int CharacterStartCol { get; private set; }
+    public int ItemSpawnRow { get; private set; }
+    public int ItemSpawnCol { get; private set; }
     private int NumRows { get { return layout.GetLength(0); } }
     private int NumCols { get { return layout.GetLength(1); } }
 
@@ -30,6 +33,7 @@ namespace GameLibrary {
       int top = TOP_PAD;
       int left = BOUNDARY_PAD;
       Character character = null;
+      Item item = null;
       List<string> mapLines = mapFile;
 
       // read from map file
@@ -49,7 +53,7 @@ namespace GameLibrary {
         int j = 0;
         foreach (char c in mapLine) {
           int val = c - '0';
-          layout[i, j] = (val == 1 ? 1 : 0);
+          layout[i, j] = val; 
           PictureBox pb = CreateMapCell(val, LoadImg);
           if (pb != null) {
             pb.Top = top;
@@ -60,6 +64,11 @@ namespace GameLibrary {
             CharacterStartRow = i;
             CharacterStartCol = j;
             character = new Character(pb, new Position(i, j), this);
+          }
+          if (val == 6) { 
+            ItemSpawnRow = i;
+            ItemSpawnCol = j;
+            item = new Item(pb, new Position1(i, j), this);
           }
           left += BLOCK_SIZE;
           j++;
@@ -175,16 +184,19 @@ namespace GameLibrary {
       return result;
     }
 
+
+
     public bool IsValidPos(Position pos) {
-      if (pos.row < 0 || pos.row >= NumRows ||
-          pos.col < 0 || pos.col >= NumCols ||
-          layout[pos.row, pos.col] == 1) {
+      if (pos.row < 0 || pos.row >= NumRows || pos.col < 0 || pos.col >= NumCols || layout[pos.row, pos.col] == 1) {
         return false;
       }
+
       if (rand.NextDouble() < encounterChance) {
         encounterChance = 0.15;
         Game.GetGame().ChangeState(GameState.FIGHTING);
       }
+
+
       else {
         encounterChance += 0.10;
       }
@@ -192,8 +204,33 @@ namespace GameLibrary {
       return true;
     }
 
+    public int IsValidItem(Position pos) { 
+     if (layout[pos.row, pos.col] == 6) {
+
+       layout[pos.row, pos.col] = 0;  
+       
+       //Item.RemoveItem();
+       
+       return 6;
+      }
+     else if (layout[pos.row, pos.col] == 7) {
+       layout[pos.row, pos.col] = 0;
+       return 7;        
+      } 
+     else if (layout[pos.row, pos.col] == 8) {
+       layout[pos.row, pos.col] = 0;
+       return 8;
+      }
+     else
+     {
+       return 0;
+     }
+    }
+
     public Position RowColToTopLeft(Position p) {
       return new Position(p.row * BLOCK_SIZE + TOP_PAD, p.col * BLOCK_SIZE + BOUNDARY_PAD);
     }
+
+
   }
 }

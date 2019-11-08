@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Media;
 using System;
 
@@ -103,6 +104,24 @@ namespace GameLibrary {
         Pic.Left = topleft.col;
         Pic.Top = topleft.row;
       }
+
+
+
+      switch (map.IsValidItem(newPos))
+            {
+                case 6:
+                    Str = Str + 50;
+                    //FrmMap.RemoveItem(6);
+                    break;
+
+                case 7:
+                    Def = Def + 50;
+                    break;
+
+                case 8:
+                    Health = Health + 50;
+                    break;
+            }
     }
   }
 }

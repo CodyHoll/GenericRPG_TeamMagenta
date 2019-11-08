@@ -74,6 +74,13 @@ namespace GameLibrary {
       Speed += LVLINC_SPEED;
             LevelExp += 10;
     }
+
+    public void GetItem(int item) { 
+      if (item == 6) {
+       Str += 50;      
+      }
+    }
+
     public void RefillHealthAndMana() {
       Health = MaxHealth;
       Mana = MaxMana;
