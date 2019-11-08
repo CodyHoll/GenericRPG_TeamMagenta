@@ -25,23 +25,22 @@ namespace GameLibrary {
     /// <param name="grpMap"></param>
     /// <param name="LoadImg"></param>
     /// <returns></returns>
-    public Character LoadMap(string mapFile, GroupBox grpMap, Func<string, Bitmap> LoadImg) {
+    public Character LoadMap(List<string> mapFile, GroupBox grpMap, Func<string, Bitmap> LoadImg) {
       // declare and initialize locals
       int top = TOP_PAD;
       int left = BOUNDARY_PAD;
       Character character = null;
-      List<string> mapLines = new List<string>();
+      List<string> mapLines = mapFile;
 
       // read from map file
-      using (FileStream fs = new FileStream(mapFile, FileMode.Open)) {
-        using (StreamReader sr = new StreamReader(fs)) {
-          string line = sr.ReadLine();
+      /*using (StreamReader sr = new StreamReader(mapFile)) {
+        string line = sr.ReadLine();
           while (line != null) {
-            mapLines.Add(line);
-            line = sr.ReadLine();
-          }
+          mapLines.Add(line);
+          line = sr.ReadLine();
         }
-      }
+      }*/
+
 
       // load map file into layout and create PictureBox objects
       layout = new int[mapLines.Count, mapLines[0].Length];
@@ -136,6 +135,37 @@ namespace GameLibrary {
         case 5:
           result = new PictureBox() {
             BackgroundImage = LoadImg("quitgame"),
+            BackgroundImageLayout = ImageLayout.Stretch,
+            Width = BLOCK_SIZE,
+            Height = BLOCK_SIZE
+          };
+          break;
+
+          case 6:
+                    result = new PictureBox()
+                    {
+                        BackgroundImage = LoadImg("sword"),
+                        BackgroundImageLayout = ImageLayout.Stretch,
+                        Width = BLOCK_SIZE,
+                        Height = BLOCK_SIZE,
+                        Tag = "sword"
+          };
+          break;
+
+        case 7:
+          result = new PictureBox()
+          {
+            BackgroundImage = LoadImg("armor"),
+            BackgroundImageLayout = ImageLayout.Stretch,
+            Width = BLOCK_SIZE,
+            Height = BLOCK_SIZE
+          };
+          break;
+
+        case 8:
+          result = new PictureBox()
+          {
+            BackgroundImage = LoadImg("ring"),
             BackgroundImageLayout = ImageLayout.Stretch,
             Width = BLOCK_SIZE,
             Height = BLOCK_SIZE
